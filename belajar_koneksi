@@ -1,0 +1,15 @@
+<?php
+ 
+// sebelumnya, anda harus menyiapkan 'username database', 'kata sandi database', dan 'nama database
+
+$nama_host = "localhost";
+$pengguna = "root";
+$sandi = "";
+$basis_data = "database_coba";
+
+mysql_connect($nama host, $pengguna, $sandi);
+
+// pesan yang ditampilkan jika database terkoneksi
+echo "Terhubung";
+ 
+?>
