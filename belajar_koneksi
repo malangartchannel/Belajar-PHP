@@ -1,15 +1,30 @@
 <?php
- 
+
 // sebelumnya, anda harus menyiapkan 'username database', 'kata sandi database', dan 'nama database
 
+// jika menggunakan MySQL berbasis XAMPP, maka 'nama_host' biasanya adalah 'localhost'
 $nama_host = "localhost";
 $pengguna = "root";
 $sandi = "";
 $basis_data = "database_coba";
 
-mysql_connect($nama host, $pengguna, $sandi);
+$koneksi_basis_data = mysql_connect($nama host, $pengguna, $sandi);
 
 // pesan yang ditampilkan jika database terkoneksi
-echo "Terhubung";
- 
+ echo "Terhubung";
+
+$cari_basis_data = mysql_select_db($basis_data);
+
+// TRUE, jika basis_data ditemukan, dan FALSE jika basis_data tidak ditemukan
+if ($cari_basis_data) {
+ echo "Basis Data Tersedia";
+ }
+
+else {
+ echo "Basis Data Kosong";
+  
+// menutup koneksi ke basis_data
+mysql_close($koneksi_basis_data);
+
+}
 ?>
